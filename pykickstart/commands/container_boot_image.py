@@ -4,7 +4,7 @@ from pykickstart.errors import KickstartParseError
 from pykickstart.options import KSOptionParser, commaSplit
 
 class F29_ContainerBootImage(KickstartCommand):
-    def __init__(self, writePriority=6, *args, **kwargs):
+    def __init__(self, writePriority=12, *args, **kwargs):
         KickstartCommand.__init__(self, writePriority, *args, **kwargs)
         self.image = kwargs.get('image', None)
         self.op = self._getParser()

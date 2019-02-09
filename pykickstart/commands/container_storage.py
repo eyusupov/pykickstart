@@ -5,7 +5,7 @@ from pykickstart.options import KSOptionParser, commaSplit
 from pykickstart.i18n import _
 
 class F29_ContainerStorage(KickstartCommand):
-    def __init__(self, writePriority=6, *args, **kwargs):
+    def __init__(self, writePriority=11, *args, **kwargs):
         KickstartCommand.__init__(self, writePriority, *args, **kwargs)
         self.options = kwargs.get("options", {})
         self.op = self._getParser()

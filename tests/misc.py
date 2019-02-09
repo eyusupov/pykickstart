@@ -28,6 +28,10 @@ class WritePriority_TestCase(unittest.TestCase):
                     self.assertEqual(None, cmd.writePriority, command_class)
                 elif _name in ['bootloader', 'lilo']:
                     self.assertEqual(10, cmd.writePriority, command_class)
+                elif _name in ['container_registries', 'container_storage']:
+                    self.assertEqual(11, cmd.writePriority, command_class)
+                elif _name in ['container_boot_image', 'container_boot_options']:
+                    self.assertEqual(12, cmd.writePriority, command_class)
                 elif _name in ['multipath']:
                     self.assertEqual(50, cmd.writePriority, command_class)
                 elif _name in ['dmraid']:
@@ -54,6 +58,8 @@ class WritePriority_TestCase(unittest.TestCase):
                     self.assertEqual(133, cmd.writePriority, command_class)
                 elif _name in ['snapshot']:
                     self.assertEqual(140, cmd.writePriority, command_class)
+                elif _name in ['container_boot_image']:
+                    self.assertEqual(5, cmd.writePriority, command_class)
                 else:
                     self.assertEqual(0, cmd.writePriority, command_class)
 

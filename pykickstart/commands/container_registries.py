@@ -4,7 +4,7 @@ from pykickstart.errors import KickstartParseError
 from pykickstart.options import KSOptionParser, commaSplit
 
 class F29_ContainerRegistries(KickstartCommand):
-    def __init__(self, writePriority=6, *args, **kwargs):
+    def __init__(self, writePriority=11, *args, **kwargs):
         KickstartCommand.__init__(self, writePriority, *args, **kwargs)
         self.urls = kwargs.get("urls", None)
         self.op = self._getParser()
