@@ -8,8 +8,11 @@ class F29_TestCase(CommandTest):
     def runTest(self):
         self.assert_parse_error("container_storage")
 
-        self.assert_parse("container_storage runroot=/var/lib/containers graphroot=/var/run/containers driver=overlay",
-                          "container_storage runroot=/var/lib/containers graphroot=/var/run/containers driver=overlay\n")
+        self.assert_parse("container_storage --runroot=/var/lib/containers --graphroot=/var/run/containers --driver=overlay",
+                          "container_storage --runroot=/var/lib/containers --graphroot=/var/run/containers --driver=overlay\n")
+        
+        self.assert_parse("container_storage --runroot /var/lib/containers --graphroot /var/run/containers --driver overlay",
+                          "container_storage --runroot=/var/lib/containers --graphroot=/var/run/containers --driver=overlay\n")
 
         command = self.handler().commands[self.command]
-        self.assertEqual(command.options, None)
+        self.assertEqual(command.options, {})
