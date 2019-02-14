@@ -14,3 +14,4 @@ class F29_TestCase(CommandTest):
 
         command = self.handler().commands["container_registries"]
         self.assertEqual(command.urls, None)
+        self.assertEqual(command.__str__(), "")

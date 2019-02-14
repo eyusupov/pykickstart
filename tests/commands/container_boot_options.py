@@ -21,3 +21,4 @@ class F29_TestCase(CommandTest):
         command = self.handler().commands[self.command]
         self.assertEqual(command.options, None)
         self.assertEqual(command.defaults, True)
+        self.assertEqual(command.__str__(), "")

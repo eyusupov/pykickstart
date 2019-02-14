@@ -10,3 +10,6 @@ class F29_TestCase(CommandTest):
 
         self.assert_parse("container_boot_image fedora:latest",
                           "container_boot_image fedora:latest\n")
+
+        command = self.handler().commands[self.command]
+        self.assertEqual(command.__str__(), "")

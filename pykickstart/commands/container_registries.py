@@ -23,11 +23,10 @@ class F29_ContainerRegistries(KickstartCommand):
 
     def __str__(self):
         retval = KickstartCommand.__str__(self)
+        if not self.urls:
+            return retval
 
-        retval += "container_registries"
-        if self.urls:
-            retval += ' ' + ' '.join(self.urls)
-        retval += "\n"
+        retval += "container_registries " + ' '.join(self.urls) + "\n"
 
         return retval
 

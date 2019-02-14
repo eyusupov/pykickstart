@@ -21,7 +21,8 @@ class F29_ContainerBootImage(KickstartCommand):
     def __str__(self):
         retval = KickstartCommand.__str__(self)
 
-        retval += "container_boot_image " + self.image + "\n"
+        if self.image:
+            retval += "container_boot_image " + self.image + "\n"
 
         return retval
 

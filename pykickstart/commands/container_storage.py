@@ -24,6 +24,8 @@ class F29_ContainerStorage(KickstartCommand):
 
     def __str__(self):
         retval = KickstartCommand.__str__(self)
+        if not self.seen:
+            return retval
 
         retval += "container_storage"
         for key, value in self.options.items():
